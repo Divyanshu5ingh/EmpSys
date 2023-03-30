@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Acme.EmpSys.Localization;
 using Acme.EmpSys.MultiTenancy;
+using Acme.EmpSys.Permissions;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Identity.Web.Navigation;
 using Volo.Abp.SettingManagement.Web.Navigation;
 using Volo.Abp.TenantManagement.Web.Navigation;
@@ -43,7 +45,7 @@ public class EmpSysMenuContributor : IMenuContributor
             "EmpSys.Employees",
             l["Menu:Employees"],
             url: "/Employees"
-        )
+        ).RequirePermissions(EmpSysPermissions.Employees.Default) // Check the permission!
     )
 );
 

@@ -37,6 +37,8 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Acme.EmpSys.Permissions;
 
 namespace Acme.EmpSys.Web;
 
@@ -93,6 +95,16 @@ public class EmpSysWebModule : AbpModule
         ConfigureNavigationServices();
         ConfigureAutoApiControllers();
         ConfigureSwaggerServices(context.Services);
+
+        Configure<RazorPagesOptions>(options =>
+        {
+            // existing configuration
+
+            options.Conventions.AuthorizePage("/Employees/Index", EmpSysPermissions.Employees.Default);
+            options.Conventions.AuthorizePage("/Employees/CreateModal", EmpSysPermissions.Employees.Create);
+            options.Conventions.AuthorizePage("/Employees/EditModal", EmpSysPermissions.Employees.Edit);
+        });
+
     }
 
     private void ConfigureAuthentication(ServiceConfigurationContext context)
