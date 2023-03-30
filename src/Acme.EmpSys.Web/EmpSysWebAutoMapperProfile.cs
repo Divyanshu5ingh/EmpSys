@@ -14,5 +14,9 @@ public class EmpSysWebAutoMapperProfile : Profile
         CreateMap<Pages.Departments.CreateModalModel.CreateDepartmentViewModel,
                   CreateDepartmentDto>();
 
+        // ADD THESE NEW MAPPINGS
+        CreateMap<DepartmentDto, Pages.Departments.EditModalModel.EditDepartmentViewModel>();
+        CreateMap<Pages.Departments.EditModalModel.EditDepartmentViewModel,
+                  UpdateDepartmentDto>();
     }
 }
