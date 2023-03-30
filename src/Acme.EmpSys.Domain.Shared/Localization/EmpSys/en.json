@@ -11,6 +11,11 @@
     "Permission:Employees.Create": "Creating new Employees",
     "Permission:Employees.Edit": "Editing the employees",
     "Permission:Employees.Delete": "Deleting the employees",
+    "Permission:Departments": "Department Management",
+    "Permission:Departments.Create": "Creating new departments",
+    "Permission:Departments.Edit": "Editing the departments",
+    "Permission:Departments.Delete": "Deleting the departments",
+
     "Menu:Dashboard": "Dashboard",
     "Menu:HomePage": "Home page",
     "Dashboard": "Dashboard",

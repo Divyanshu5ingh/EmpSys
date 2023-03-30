@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Acme.EmpSys.Departments;
 using Acme.EmpSys.Employees;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -11,10 +12,16 @@ public class EmpSysDataSeederContributor
     : IDataSeedContributor, ITransientDependency
 {
     private readonly IRepository<Employee, Guid> _employeeRepository;
+    private readonly IDepartmentRepository _departmentRepository;
+    private readonly DepartmentManager _departmentManager;
 
-    public EmpSysDataSeederContributor(IRepository<Employee, Guid> employeeRepository)
+    public EmpSysDataSeederContributor(IRepository<Employee, Guid> employeeRepository, 
+        IDepartmentRepository departmentRepository, 
+        DepartmentManager departmentManager)
     {
         _employeeRepository = employeeRepository;
+        _departmentRepository = departmentRepository;
+        _departmentManager = departmentManager;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -45,7 +52,27 @@ public class EmpSysDataSeederContributor
                 JoinDate = new DateTime(2023, 1, 23),
                 Salary = 7500.0f
             },
-            autoSave: true
+        autoSave: true
         );
+
+        if (await _departmentRepository.GetCountAsync() <= 0)
+        {
+            await _departmentRepository.InsertAsync(
+                await _departmentManager.CreateAsync(
+                    "Development",
+                    "Development for developer"
+            )
+            );
+
+            await _departmentRepository.InsertAsync(
+                await _departmentManager.CreateAsync(
+                    "Testing",
+
+                    "Testing for tester"
+                )
+            );
+        }
+
     }
+
 }

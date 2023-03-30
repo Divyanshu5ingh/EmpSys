@@ -18,6 +18,12 @@ public class EmpSysPermissionDefinitionProvider : PermissionDefinitionProvider
         employeesPermission.AddChild(EmpSysPermissions.Employees.Create, L("Permission:Employees.Create"));
         employeesPermission.AddChild(EmpSysPermissions.Employees.Edit, L("Permission:Employees.Edit"));
         employeesPermission.AddChild(EmpSysPermissions.Employees.Delete, L("Permission:Employees.Delete"));
+
+        var departmentsPermission = empSysGroup.AddPermission(EmpSysPermissions.Departments.Default, L("Permission:Departments"));
+        departmentsPermission.AddChild(EmpSysPermissions.Departments.Create, L("Permission:Departments.Create"));
+        departmentsPermission.AddChild(EmpSysPermissions.Departments.Edit, L("Permission:Departments.Edit"));
+        departmentsPermission.AddChild(EmpSysPermissions.Departments.Delete, L("Permission:Departments.Delete"));
+
     }
 
     private static LocalizableString L(string name)

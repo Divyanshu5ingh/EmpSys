@@ -1,4 +1,5 @@
-﻿using Acme.EmpSys.Employees;
+﻿using Acme.EmpSys.Departments;
+using Acme.EmpSys.Employees;
 using AutoMapper;
 
 namespace Acme.EmpSys;
@@ -12,5 +13,6 @@ public class EmpSysApplicationAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
         CreateMap<Employee, EmployeeDto>();
         CreateMap<CreateUpdateEmployeeDto, Employee>();
+        CreateMap<Department, DepartmentDto>();
     }
 }
