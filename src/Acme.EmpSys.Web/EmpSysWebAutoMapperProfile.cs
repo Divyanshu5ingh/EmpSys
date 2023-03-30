@@ -1,4 +1,5 @@
-﻿using Acme.EmpSys.Employees;
+﻿using Acme.EmpSys.Departments;
+using Acme.EmpSys.Employees;
 using AutoMapper;
 
 namespace Acme.EmpSys.Web;
@@ -9,5 +10,9 @@ public class EmpSysWebAutoMapperProfile : Profile
     {
         //Define your AutoMapper configuration here for the Web project.
         CreateMap<EmployeeDto, CreateUpdateEmployeeDto>();
+
+        CreateMap<Pages.Departments.CreateModalModel.CreateDepartmentViewModel,
+                  CreateDepartmentDto>();
+
     }
 }
