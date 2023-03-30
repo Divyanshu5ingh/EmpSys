@@ -31,7 +31,8 @@
     "Type": "Type",
     "Salary": "Salary",
     "CreationTime": "Creation time",
-    "AreYouSureToDelete": "Are you sure you want to delete this item?",
-    
+    "EmployeeDeletionConfirmationMessage": "Are you sure you want to delete this item?",
+    "AreYouSureToDelete": "Are you sure you want to delete this item?"
+
   }
 }
