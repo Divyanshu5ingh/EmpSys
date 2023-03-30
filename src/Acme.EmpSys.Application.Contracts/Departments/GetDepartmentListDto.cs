@@ -4,6 +4,6 @@ namespace Acme.EmpSys.Departments;
 
 public class GetDepartmentListDto : PagedAndSortedResultRequestDto
 {
-    public string Filter { get; set; }
+    public string? Filter { get; set; }
 }
 

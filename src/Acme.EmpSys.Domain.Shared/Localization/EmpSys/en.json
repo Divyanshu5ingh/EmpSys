@@ -15,6 +15,12 @@
     "Permission:Departments.Create": "Creating new departments",
     "Permission:Departments.Edit": "Editing the departments",
     "Permission:Departments.Delete": "Deleting the departments",
+    "Menu:Departments": "Departments",
+    "Departments": "Departments",
+    "DepartmentDeletionConfirmationMessage": "Are you sure to delete the department '{0}'?",
+
+    "NewDepartment": "New department",
+    "ShortBio": "Short Bio",
 
     "Menu:Dashboard": "Dashboard",
     "Menu:HomePage": "Home page",

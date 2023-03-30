@@ -46,6 +46,12 @@ public class EmpSysMenuContributor : IMenuContributor
             l["Menu:Employees"],
             url: "/Employees"
         ).RequirePermissions(EmpSysPermissions.Employees.Default) // Check the permission!
+    ).AddItem( // ADDED THE NEW "AUTHORS" MENU ITEM UNDER THE "BOOK STORE" MENU
+        new ApplicationMenuItem(
+            "EmpSys.Departments",
+            l["Menu:Departments"],
+            url: "/Departments"
+        ).RequirePermissions(EmpSysPermissions.Departments.Default)
     )
 );
 
