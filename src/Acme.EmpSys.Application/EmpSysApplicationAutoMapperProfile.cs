@@ -14,5 +14,7 @@ public class EmpSysApplicationAutoMapperProfile : Profile
         CreateMap<Employee, EmployeeDto>();
         CreateMap<CreateUpdateEmployeeDto, Employee>();
         CreateMap<Department, DepartmentDto>();
+        CreateMap<Department, DepartmentLookupDto>();
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -12,4 +13,6 @@ public interface IEmployeeAppService :
         CreateUpdateEmployeeDto>
 
 {
+    // ADD the NEW METHOD
+    Task<ListResultDto<DepartmentLookupDto>> GetDepartmentLookupAsync();
 }

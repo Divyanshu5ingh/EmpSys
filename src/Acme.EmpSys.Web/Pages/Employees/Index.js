@@ -49,6 +49,10 @@
                     data: "name"
                 },
                 {
+                    title: l('Department'),
+                    data: "departmentName"
+                },
+                {
                     title: l('Age'),
                     data: "age"
                 },

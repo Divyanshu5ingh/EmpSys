@@ -5,6 +5,8 @@ namespace Acme.EmpSys.Employees
 {
     public class CreateUpdateEmployeeDto
     {
+        public Guid DepartmentId { get; set; }
+
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
