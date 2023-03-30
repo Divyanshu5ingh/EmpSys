@@ -18,5 +18,10 @@ public class EmpSysWebAutoMapperProfile : Profile
         CreateMap<DepartmentDto, Pages.Departments.EditModalModel.EditDepartmentViewModel>();
         CreateMap<Pages.Departments.EditModalModel.EditDepartmentViewModel,
                   UpdateDepartmentDto>();
+
+        CreateMap<Pages.Employees.CreateModalModel.CreateEmployeeViewModel, CreateUpdateEmployeeDto>();
+        CreateMap<EmployeeDto, Pages.Employees.EditModalModel.EditEmployeeViewModel>();
+        CreateMap<Pages.Employees.EditModalModel.EditEmployeeViewModel, CreateUpdateEmployeeDto>();
+
     }
 }
