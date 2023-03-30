@@ -1,4 +1,5 @@
-﻿using Acme.EmpSys.Employees;
+﻿using Acme.EmpSys.Departments;
+using Acme.EmpSys.Employees;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -54,6 +55,8 @@ public class EmpSysDbContext :
 
     #endregion
     public DbSet<Employee> Employees { get; set; }
+    public DbSet<Department> Departments { get; set; }
+
     public EmpSysDbContext(DbContextOptions<EmpSysDbContext> options)
         : base(options)
     {
@@ -90,5 +93,19 @@ public class EmpSysDbContext :
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
         });
+        builder.Entity<Department>(b =>
+        {
+            b.ToTable(EmpSysConsts.DbTablePrefix + "Departments",
+                EmpSysConsts.DbSchema);
+
+            b.ConfigureByConvention();
+
+            b.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(DepartmentConsts.MaxNameLength);
+
+            b.HasIndex(x => x.Name);
+        });
+
     }
 }
