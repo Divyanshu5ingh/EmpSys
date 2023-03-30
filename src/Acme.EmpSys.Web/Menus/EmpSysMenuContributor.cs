@@ -33,6 +33,20 @@ public class EmpSysMenuContributor : IMenuContributor
                 order: 0
             )
         );
+        context.Menu.AddItem(
+    new ApplicationMenuItem(
+        "EmpSys",
+        l["Menu:EmpSys"],
+        icon: "fa fa-employee"
+    ).AddItem(
+        new ApplicationMenuItem(
+            "EmpSys.Employees",
+            l["Menu:Employees"],
+            url: "/Employees"
+        )
+    )
+);
+
 
         if (MultiTenancyConsts.IsEnabled)
         {

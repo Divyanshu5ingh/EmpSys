@@ -1,0 +1,24 @@
+﻿@page
+@using Acme.EmpSys.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Acme.EmpSys.Web.Pages.Employees
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<EmpSysResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.MenuItemName = "EmpSys";
+    PageLayout.Content.Title = L["Employees"].Value;
+}
+@section scripts
+    {
+    <abp-script src="/Pages/Employees/Index.js" />
+}
+
+<abp-card>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="EmployeesTable"></abp-table>
+    </abp-card-body>
+</abp-card>
+
+
