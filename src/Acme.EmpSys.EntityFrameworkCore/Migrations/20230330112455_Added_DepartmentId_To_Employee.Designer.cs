@@ -4,6 +4,7 @@ using Acme.EmpSys.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.EmpSys.Migrations
 {
     [DbContext(typeof(EmpSysDbContext))]
-    partial class EmpSysDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230330112455_Added_DepartmentId_To_Employee")]
+    partial class AddedDepartmentIdToEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

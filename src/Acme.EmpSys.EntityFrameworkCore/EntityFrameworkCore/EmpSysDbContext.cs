@@ -92,6 +92,9 @@ public class EmpSysDbContext :
                 EmpSysConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+
+            // ADD THE MAPPING FOR THE RELATION
+            b.HasOne<Department>().WithMany().HasForeignKey(x => x.DepartmentId).IsRequired();
         });
         builder.Entity<Department>(b =>
         {

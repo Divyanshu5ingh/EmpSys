@@ -14,6 +14,7 @@ namespace Acme.EmpSys.Employees
         public string Email { get; set; }
         public DateTime JoinDate { get; set; }
         public float Salary { get; set; }
+        public Guid DepartmentId { get; set; }
 
     }
 }
